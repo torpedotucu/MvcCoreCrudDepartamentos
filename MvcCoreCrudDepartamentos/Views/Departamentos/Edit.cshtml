@@ -1,0 +1,12 @@
+﻿@model Departamento
+<h1>Edit</h1>
+<form method="post">
+    <input type="hidden" name="iddepartamento" value="@Model.idDepartamento" />
+    <label>Departamento: </label>
+    <input type="text" name="nombre" class="form-control" />
+    <input type="text" name="localidad" class="form-control" />
+
+    <button class="btn btn-light">
+        Update
+    </button>
+</form>
