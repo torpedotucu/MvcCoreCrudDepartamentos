@@ -110,5 +110,19 @@ go
             this.com.Parameters.Clear();
 
         }
+
+        public async Task DeleteDepartamento(int idDept)
+        {
+            string sql = "DELETE FROM DEPT WHERE DEPT_NO=@iddept";
+            this.com.Parameters.AddWithValue("@iddept", idDept);
+            this.com.CommandType=CommandType.Text;
+            this.com.CommandText=sql;
+
+            await this.cn.OpenAsync();
+            await this.com.ExecuteNonQueryAsync();
+            await this.cn.CloseAsync();
+            this.com.Parameters.Clear();
+
+        }
     }
 }
